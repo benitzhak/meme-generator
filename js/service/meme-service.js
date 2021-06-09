@@ -13,17 +13,30 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [{
             txt: '',
-            size: 20,
-            align: 'left',
-            color: 'red',
-            offsetY: 50
+            size: 40,
+            align: 'center',
+            color: 'black',
+            fillColor: 'white',
+            offsetY: 50,
+            offsetX: 225
         },
         {
             txt: '',
-            size: 20,
-            align: 'left',
-            color: 'red',
-            offsetY: 400
+            size: 40,
+            align: 'center',
+            color: 'black',
+            fillColor: 'white',
+            offsetY: 200,
+            offsetX: 225
+        },
+        {
+            txt: '',
+            size: 40,
+            align: 'center',
+            color: 'black',
+            fillColor: 'white',
+            offsetY: 400,
+            offsetX: 225
         }
     ]
 }
@@ -33,4 +46,18 @@ function setText(ev) {
     gMeme.lines[gN].txt = elText;
     drawImg(gCurrImg)
     draw()
+}
+
+function clearInput() {
+    var elInput = document.getElementById('input');
+    elInput.value = '';
+}
+
+function openEditor() {
+    var elEditor = document.querySelector('.editor-container');
+    var elGallry = document.querySelector('.gallery-container');
+    if (!elEditor.classList.contains('flex')) {
+        elEditor.classList.add('flex');
+        elGallry.classList.remove('grid');
+    }
 }

@@ -13,14 +13,14 @@
     <div class="main-container grid">
         <header class="header-container flex space-between">
             <img class="logo" src="img/LOGO/LOGO.png" alt="">
-            <ul class="menu clean-list flex">
-                <li class="gallery">gallery</li>
+            <ul class="menu clean-list flex align-center">
+                <li class="gallery" onclick="openGallery()">gallery</li>
                 <li class="about">about</li>
             </ul>
         </header>
-        <main class="editor-container flex space-between">
+        <main class="editor-container">
             <canvas class="canvas" height="450" width="450"></canvas>
-            <div class="editor-controller flex justify-content-center ">
+            <div class="editor-controller flex ">
                 <input id="input" type="text" placeholder="write here" oninput="setText(event)">
                 <div class="btns-editor flex ">
                     <section class="top-btns">
@@ -28,29 +28,48 @@
                         <img class="btn line-select-btn " src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png " onclick="selesctDrawLine()">
                         <img class="btn trash-btn " src="img/ICONS/trash.png " onclick="cleanTextLine()">
                     </section>
-                    <section class="main-btns ">
-                        <img class="btn text-grow-btn " src="img/ICONS/increase font - icon.png " alt=" ">
-                        <img class="btn text-shrink-btn " src="img/ICONS/decrease font - icon.png " alt=" ">
-                        <img class="btn align-left-btn " src="img/ICONS/align-to-left.png " alt=" ">
-                        <img class="btn align-center-btn " src="img/ICONS/center-text-alignment.png " alt=" ">
-                        <img class="btn align-right-btn " src="img/ICONS/align-to-right.png " alt=" ">
-                        <img class="btn text-color-btn " src="img/ICONS/text stroke.png " alt=" ">
-                        <img class="btn fill-color-btn " src="img/ICONS/paint-board-and-brush.png " alt=" ">
+                    <section class="middle-btns ">
+                        <img class="btn text-grow-btn " src="img/ICONS/increase font - icon.png " onclick="onGrowFont()">
+                        <img class="btn text-shrink-btn " src="img/ICONS/decrease font - icon.png " onclick="onShrinkFont()">
+                        <img class="btn align-left-btn " src="img/ICONS/align-to-left.png " onclick="onAlignLeft()">
+                        <img class="btn align-center-btn " src="img/ICONS/center-text-alignment.png " onclick="onAlignCenter()">
+                        <img class="btn align-right-btn " src="img/ICONS/align-to-right.png " onclick="onAlignRight()">
+                    </section>
+                    <section class="low-btns">
+                        <input class="text-stroke" type="color" oninput="strokeColor(this)">
+                        <img class="btn stroke-color-btn " src="img/ICONS/text stroke.png " onclick="openStroke()">
+                        <input class="text-fill" type="color" oninput="fillColor(this)">
+                        <img class="btn fill-color-btn " src="img/ICONS/paint-board-and-brush.png " onclick="openFill()">
                     </section>
                     <section class="save ">
                         <button>save</button>
-                        <button>download</button>
+                        <a href="#" onclick="downloadCanvas(this)" download="my-img">Download</a>
                     </section>
                 </div>
             </div>
         </main>
-        <main class="gallery-container ">
-            <section class="gallery-imges ">
-                <img onclick="drawImg(this)" class="img " src="img/9.jpg " alt=" ">
-            </section>
+        <main class="gallery-container grid ">
+            <img onclick="drawImg(this)" class="img1" src="img/1.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img2" src="img/2.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img3" src="img/3.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img4" src="img/4.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img5" src="img/5.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img6" src="img/6.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img7" src="img/7.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img8" src="img/8.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img9" src="img/9.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img10" src="img/10.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img11" src="img/11.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img12" src="img/12.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img13" src="img/13.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img14" src="img/14.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img15" src="img/15.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img16" src="img/16.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img17" src="img/17.jpg " alt=" ">
+            <img onclick="drawImg(this)" class="img18" src="img/18.jpg " alt=" ">
         </main>
         <footer class="footer ">
-            <p>footer</p>
+            <p>meme generator</p>
         </footer>
     </div>
     <script src="js/service/meme-service.js "></script>
