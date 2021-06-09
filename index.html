@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Meme-generator</title>
+</head>
+
+<body onload="init()">
+    <div class="main-container grid">
+        <header class="header-container flex space-between">
+            <img class="logo" src="img/LOGO/LOGO.png" alt="">
+            <ul class="menu clean-list flex">
+                <li class="gallery">gallery</li>
+                <li class="about">about</li>
+            </ul>
+        </header>
+        <main class="editor-container flex space-between">
+            <canvas class="canvas" height="450" width="450"></canvas>
+            <div class="editor-controller flex justify-content-center ">
+                <input id="input" type="text" placeholder="write here" oninput="setText(event)">
+                <div class="btns-editor flex ">
+                    <section class="top-btns">
+                        <img class="btn add-btn " src="img/ICONS/add.png " onclick="draw()">
+                        <img class="btn line-select-btn " src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png " onclick="selesctDrawLine()">
+                        <img class="btn trash-btn " src="img/ICONS/trash.png " onclick="cleanTextLine()">
+                    </section>
+                    <section class="main-btns ">
+                        <img class="btn text-grow-btn " src="img/ICONS/increase font - icon.png " alt=" ">
+                        <img class="btn text-shrink-btn " src="img/ICONS/decrease font - icon.png " alt=" ">
+                        <img class="btn align-left-btn " src="img/ICONS/align-to-left.png " alt=" ">
+                        <img class="btn align-center-btn " src="img/ICONS/center-text-alignment.png " alt=" ">
+                        <img class="btn align-right-btn " src="img/ICONS/align-to-right.png " alt=" ">
+                        <img class="btn text-color-btn " src="img/ICONS/text stroke.png " alt=" ">
+                        <img class="btn fill-color-btn " src="img/ICONS/paint-board-and-brush.png " alt=" ">
+                    </section>
+                    <section class="save ">
+                        <button>save</button>
+                        <button>download</button>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <main class="gallery-container ">
+            <section class="gallery-imges ">
+                <img onclick="drawImg(this)" class="img " src="img/9.jpg " alt=" ">
+            </section>
+        </main>
+        <footer class="footer ">
+            <p>footer</p>
+        </footer>
+    </div>
+    <script src="js/service/meme-service.js "></script>
+    <script src="js/controller.js "></script>
+</body>
+
+</html>

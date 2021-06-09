@@ -1,0 +1,90 @@
+/* main layout */
+
+.main-container {
+    height: 100vh;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr 3fr 3fr 1fr;
+}
+
+.header-container {
+    grid-column: 1/ span 8;
+    grid-row: 1/ span 1;
+}
+
+.editor-container {
+    grid-column: 1/ span 8;
+    grid-row: 2/ span 1;
+}
+
+.gallery-container {
+    grid-column: 1/ span 8;
+    grid-row: 3/ span 1;
+}
+
+.footer {
+    grid-column: 1/ span 8;
+    grid-row: 4/ span 1;
+}
+
+
+/* header layout */
+
+.logo {
+    width: 300px;
+    height: 100px;
+}
+
+
+/* editer layout */
+
+.editor-container {
+    background-color: lightgrey;
+}
+
+.editor-controller {
+    flex-direction: column;
+}
+
+.canvas {
+    border: 1px solid black;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.btns-editor {
+    flex-direction: column;
+    gap: 100px;
+}
+
+
+/* helpers */
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.justify-content-center {
+    justify-content: center;
+}
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
