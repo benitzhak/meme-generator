@@ -175,15 +175,28 @@
                 
                 .text-stroke-btn {
                     position: relative;
+                    cursor: pointer;
                 }
                 
                 .text-stroke {
                     opacity: 0;
+                    right: 2px;
                     position: absolute;
+                    width: 30px;
+                    cursor: pointer;
+                }
+                
+                .fill-color-btn {
+                    position: relative;
+                    cursor: pointer;
                 }
                 
                 .text-fill {
                     opacity: 0;
+                    position: absolute;
+                    right: 2px;
+                    width: 30px;
+                    cursor: pointer;
                 }
                 
                 .btn:hover {

@@ -40,12 +40,14 @@
                         <img class="btn align-right-btn " src="img/ICONS/align-to-right.png " onclick="onAlignRight()">
                     </section>
                     <section class="low-btns">
-                        <button class="text-stroke-btn" onclick="openStroke()">
-                        <img class="btn stroke-color-btn " src="img/ICONS/text stroke.png " >
+                        <button class="btn text-stroke-btn" onclick="openStroke()">
+                        <img  src="img/ICONS/text stroke.png " >
                         <input class="text-stroke" type="color" oninput="strokeColor(this)">
                     </button>
+                        <button class="btn fill-color-btn">
+                            <img src="img/ICONS/paint-board-and-brush.png " onclick="openFill()">
                         <input class="text-fill" type="color" oninput="fillColor(this)">
-                        <img class="btn fill-color-btn " src="img/ICONS/paint-board-and-brush.png " onclick="openFill()">
+                    </button>
                     </section>
                     <section class="save ">
                         <a href="#" onclick="downloadCanvas(this)" download="my-img">Download</a>
