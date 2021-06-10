@@ -1,6 +1,6 @@
         @font-face {
             font-family: footer-font;
-            src: url('/fonts/LuckiestGuy-Regular.ttf');
+            src: url('../fonts/LuckiestGuy-Regular.ttf');
         }
         
         * {
@@ -25,6 +25,10 @@
         .header-container {
             grid-column: 1/ span 8;
             grid-row: 1/ span 1;
+            background-color: #FB9623;
+            margin-bottom: 30px;
+            box-shadow: -10px 6px 0 #fe6e20, -19px 11px 0 #a8172a;
+            padding: 20px;
         }
         
         .editor-container {
@@ -48,27 +52,27 @@
             grid-column: 1/ span 8;
             grid-row: 4/ span 1;
             background-color: #FB9623;
-            height: 100px;
             margin-top: 30px;
-            font-family: footer-font, sans-serif;
             text-align: center;
+        }
+        
+        .footer p {
             font-size: 40px;
             -webkit-text-stroke-width: 2px;
             -webkit-text-stroke-color: black;
             color: #fe6e20;
-            /* text-shadow: -10px 6px 0 #fe6e20, -19px 11px 0 #a8172a; */
+            font-family: footer-font, sans-serif;
+        }
+        
+        .footer small {
+            position: relative;
+            bottom: 30px;
+            font-size: 16px;
         }
         /* header layout */
         
-        .header-container {
-            background-color: #FB9623;
-            margin-bottom: 30px;
-            box-shadow: -10px 6px 0 #fe6e20, -19px 11px 0 #a8172a;
-        }
-        
         .logo {
-            width: 300px;
-            height: 100px;
+            max-width: 300px;
         }
         
         .menu {
@@ -209,4 +213,39 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
+        }
+        
+        @media (max-width: 500px) {
+            .logo {
+                max-width: 100px;
+            }
+            .menu {
+                flex-direction: column;
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100%;
+                background-color: #FB9623;
+                text-shadow: unset;
+                opacity: 0.97;
+            }
+            .header-container {
+                padding: 10px 0;
+            }
+            .gallery {
+                font-size: 15px;
+                padding: 30px;
+                border-bottom: 2px solid #a8172a;
+            }
+            .gallery:hover {
+                font-size: 15px;
+            }
+            .about {
+                font-size: 15px;
+                padding: 30px;
+                border-bottom: 2px solid #a8172a;
+            }
+            .about:hover {
+                font-size: 15px;
+            }
         }

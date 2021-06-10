@@ -96,7 +96,7 @@ function onAlignCenter() {
 function onAlignRight() {
     var idx = gMeme.selectedLineIdx;
     gMeme.lines[idx].align = 'right';
-    gMeme.lines[idx].offsetX = 430;
+    gMeme.lines[idx].offsetX = 410;
     drawRect();
 }
 
