@@ -20,10 +20,10 @@
                 <li class="about">about</li>
             </ul>
         </header>
-        <main class="editor-container">
+        <main class="editor-container border">
             <canvas class="canvas" height="450" width="450"></canvas>
             <div class="editor-controller flex ">
-                <input id="input" type="text" placeholder="write here" oninput="setText(event)" onfocus="drawRect()">
+                <input id="input" type="text" placeholder="write something" oninput="setText(event)" onfocus="drawRect()">
                 <div class="btns-editor flex ">
                     <section class="top-btns">
                         <img class="btn add-btn " src="img/ICONS/add.png " onclick="removeRect()">
@@ -80,7 +80,6 @@
             <small>® all rights reserved meme generator 2021</small>
         </footer>
     </div>
-    <script src="lib/hammer.min.js"></script>
     <script src="js/service/meme-service.js "></script>
     <script src="js/controller.js "></script>
 </body>
