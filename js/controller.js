@@ -1,14 +1,17 @@
 'use strict';
 
 
+
 function init() {
     gCanvas = document.querySelector('.canvas');
     gCtx = gCanvas.getContext('2d');
 }
 
+
 function drawImg(img) {
     gCurrImg = img;
-    var elImg = document.querySelector(`.${img.classList}`);
+    gMeme.selectedImgId = img.id;
+    var elImg = document.getElementById(`${img.id}`);
     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height);
     openEditor();
 }
@@ -40,6 +43,22 @@ function openGallery() {
     }
 }
 
+function textUp() {
+    var idx = gMeme.selectedLineIdx;
+    if (gMeme.lines[idx].offsetY === 35) return
+    else
+        gMeme.lines[idx].offsetY--
+        drawRect();
+}
+
+function textDown() {
+    var idx = gMeme.selectedLineIdx;
+    if (gMeme.lines[idx].offsetY === 445) return
+    else
+        gMeme.lines[idx].offsetY++
+        drawRect();
+}
+
 function openFill() {
     document.querySelector('.text-fill').click();
 }
@@ -49,53 +68,59 @@ function openStroke() {
 }
 
 function fillColor(color) {
-    gMeme.lines[gN].fillColor = color.value;
-    drawImg(gCurrImg);
-    draw();
+    var idx = gMeme.selectedLineIdx;
+    gMeme.lines[idx].fillColor = color.value;
+    drawRect();
 }
 
 function strokeColor(color) {
-    gMeme.lines[gN].color = color.value;
-    drawImg(gCurrImg);
-    draw();
+    var idx = gMeme.selectedLineIdx;
+    gMeme.lines[idx].color = color.value;
+    drawRect();
 }
 
 function onAlignLeft() {
-    gMeme.lines[gN].align = 'left';
-    gMeme.lines[gN].offsetX = 20;
-    drawImg(gCurrImg);
-    draw();
+    var idx = gMeme.selectedLineIdx;
+    gMeme.lines[idx].align = 'left';
+    gMeme.lines[idx].offsetX = 20;
+    drawRect();
 }
 
 function onAlignCenter() {
-    gMeme.lines[gN].align = 'center';
-    gMeme.lines[gN].offsetX = 225;
-    drawImg(gCurrImg);
-    draw();
+    var idx = gMeme.selectedLineIdx;
+    gMeme.lines[idx].align = 'center';
+    gMeme.lines[idx].offsetX = 225;
+    drawRect();
 }
 
 function onAlignRight() {
-    gMeme.lines[gN].align = 'right';
-    gMeme.lines[gN].offsetX = 430;
+    var idx = gMeme.selectedLineIdx;
+    gMeme.lines[idx].align = 'right';
+    gMeme.lines[idx].offsetX = 430;
+    drawRect();
+}
+
+function onGrowFont() {
+    var idx = gMeme.selectedLineIdx;
+    gMeme.lines[idx].size++
+        drawRect();
+}
+
+function onShrinkFont() {
+    var idx = gMeme.selectedLineIdx;
+    gMeme.lines[idx].size--
+        drawRect();
+}
+
+function cleanTextLine() {
+    var idx = gMeme.selectedLineIdx;
+    clearInput();
+    gMeme.lines[idx].txt = '';
     drawImg(gCurrImg);
     draw();
 }
 
-function onGrowFont() {
-    gMeme.lines[gN].size++
-        drawImg(gCurrImg);
-    draw();
-}
-
-function onShrinkFont() {
-    gMeme.lines[gN].size--
-        drawImg(gCurrImg);
-    draw();
-}
-
-function cleanTextLine() {
-    clearInput();
-    gMeme.lines[gN].txt = '';
+function removeRect() {
     drawImg(gCurrImg);
     draw();
 }
@@ -104,11 +129,36 @@ function draw() {
     drawText();
 }
 
+function drawRect() {
+    var idx = gMeme.selectedLineIdx;
+    var hight = gMeme.lines[idx].offsetY
+    drawImg(gCurrImg);
+    draw();
+    if (idx === 0) {
+        gCtx.strokeRect(20, hight - 40, 400, 50)
+    } else if (idx === 1) {
+        gCtx.strokeRect(20, hight - 40, 400, 50);
+    } else {
+        gCtx.strokeRect(20, hight - 40, 400, 50);
+    }
+}
+
 function selesctDrawLine() {
     clearInput();
-    if (gN === 0) {
-        gN = 1
-    } else if (gN === 1) {
-        gN = 2;
-    } else gN = 0;
+    if (gMeme.selectedLineIdx === 0) {
+        gMeme.selectedLineIdx = 1
+        drawImg(gCurrImg);
+        draw();
+        gCtx.strokeRect(20, gMeme.lines[gMeme.selectedLineIdx].offsetY - 40, 400, 50);
+    } else if (gMeme.selectedLineIdx === 1) {
+        gMeme.selectedLineIdx = 2;
+        drawImg(gCurrImg);
+        draw();
+        gCtx.strokeRect(20, gMeme.lines[gMeme.selectedLineIdx].offsetY - 40, 400, 50);
+    } else {
+        gMeme.selectedLineIdx = 0
+        drawImg(gCurrImg);
+        draw();
+        gCtx.strokeRect(20, gMeme.lines[gMeme.selectedLineIdx].offsetY - 40, 400, 50)
+    };
 }

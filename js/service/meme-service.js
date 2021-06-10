@@ -2,8 +2,6 @@
 var gCanvas;
 var gCtx;
 var gCurrImg;
-// var gOffsetY = 50;
-var gN = 0;
 
 var gKeywords = { 'happy': 12, 'funny puk': 1 }
 
@@ -41,11 +39,13 @@ var gMeme = {
     ]
 }
 
+
+
 function setText(ev) {
+    var idx = gMeme.selectedLineIdx;
     var elText = ev.target.value;
-    gMeme.lines[gN].txt = elText;
-    drawImg(gCurrImg)
-    draw()
+    gMeme.lines[idx].txt = elText;
+    drawRect();
 }
 
 function clearInput() {
