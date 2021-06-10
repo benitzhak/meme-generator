@@ -162,3 +162,8 @@ function selesctDrawLine() {
         gCtx.strokeRect(20, gMeme.lines[gMeme.selectedLineIdx].offsetY - 40, 400, 50)
     };
 }
+
+function toggleMenu() {
+    var elMenu = document.querySelector('.menu');
+    elMenu.classList.toggle('open');
+}

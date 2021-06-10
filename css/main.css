@@ -1,251 +1,305 @@
-        @font-face {
-            font-family: footer-font;
-            src: url('../fonts/LuckiestGuy-Regular.ttf');
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        img {
-            width: 100%;
-        }
-        
-        body {
-            margin: 0;
-        }
-        /* main layout */
-        
-        .main-container {
-            height: 100vh;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: 1fr 3fr 3fr 1fr;
-        }
-        
-        .header-container {
-            grid-column: 1/ span 8;
-            grid-row: 1/ span 1;
-            background-color: #FB9623;
-            margin-bottom: 30px;
-            box-shadow: -10px 5px 0 #fe6e20, -19px 11px 0 #a8172a;
-            padding: 20px;
-        }
-        
-        .editor-container {
-            grid-column: 1/ span 8;
-            grid-row: 2/ span 1;
-            background-color: lightgrey;
-            display: none;
-            border: solid 7px #fe6e20;
-            border-radius: 30px;
-            margin: 0 auto;
-        }
-        
-        .gallery-container {
-            grid-column: 1/ span 8;
-            grid-row: 3/ span 1;
-            background-color: lightgrey;
-            display: none;
-        }
-        
-        .footer {
-            grid-column: 1/ span 8;
-            grid-row: 4/ span 1;
-            background-color: #FB9623;
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .footer p {
-            font-size: 40px;
-            -webkit-text-stroke-width: 2px;
-            -webkit-text-stroke-color: black;
-            color: #fe6e20;
-            font-family: footer-font, sans-serif;
-        }
-        
-        .footer small {
-            position: relative;
-            bottom: 30px;
-            font-size: 16px;
-        }
-        /* header layout */
-        
-        .logo {
-            max-width: 300px;
-        }
-        
-        .menu {
-            font-size: 30px;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            color: #FB9623;
-            text-transform: capitalize;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: black;
-            text-shadow: -10px 6px 0 #fe6e20, -19px 11px 0 #a8172a;
-        }
-        
-        .gallery {
-            cursor: pointer;
-            transition: .2s;
-        }
-        
-        .gallery-container img {
-            border-radius: 20px;
-            cursor: pointer;
-        }
-        
-        .gallery:hover {
-            font-size: 50px;
-        }
-        
-        .about {
-            cursor: pointer;
-            transition: .2s;
-        }
-        
-        .about:hover {
-            font-size: 50px;
-        }
-        
-        li {
-            padding-right: 50px;
-        }
-        /* editer layout */
-        
-        .editor-controller {
-            flex-direction: column;
-            margin: auto;
-        }
-        
-        .canvas {
-            border-radius: 23px;
-        }
-        
-        #input {
-            max-width: 300px;
-            margin: 30px auto 0 auto;
-            padding: 5px;
-        }
-        
-        .top-btns {
-            margin: 0 auto;
-            padding-top: 15px;
-        }
-        
-        .btn {
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.49);
-            margin: 3px;
-            padding: 5px;
-        }
-        
-        .low-btns {
-            text-align: center;
-        }
-        
-        .save {
-            text-align: center;
-        }
-        
-        .save a {
-            text-decoration: none;
-            color: rgba(0, 0, 0, 0.49);
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        }
-        
-        .save a:hover {
-            color: #FB9623;
-        }
-        
-        .text-stroke {
-            opacity: 0;
-        }
-        
-        .text-fill {
-            opacity: 0;
-        }
-        
-        .btn:hover {
-            background-color: #FB9623;
-            filter: sepia(30%);
-        }
-        
-        .btns-editor {
-            flex-direction: column;
-            padding: 30px 50px 30px 50px;
-            gap: 50px;
-        }
-        /* gallery layout */
-        
-        .gallery-container {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
-            grid-gap: 10px;
-        }
-        /* helpers */
-        
-        .grid {
-            display: grid;
-        }
-        
-        .flex {
-            display: flex;
-        }
-        
-        .space-between {
-            justify-content: space-between;
-        }
-        
-        .flex.align-center {
-            align-items: center;
-        }
-        
-        .flex.justify-content-center {
-            justify-content: center;
-        }
-        
-        .clean-list {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        @media (max-width: 500px) {
-            .logo {
-                max-width: 100px;
-            }
-            .menu {
-                flex-direction: column;
-                position: fixed;
-                right: 0;
-                top: 0;
-                height: 100%;
-                background-color: #FB9623;
-                text-shadow: unset;
-                opacity: 0.97;
-            }
-            .header-container {
-                padding: 10px 0;
-            }
-            .gallery {
-                font-size: 15px;
-                padding: 30px;
-                border-bottom: 2px solid #a8172a;
-            }
-            .gallery:hover {
-                font-size: 15px;
-            }
-            .about {
-                font-size: 15px;
-                padding: 30px;
-                border-bottom: 2px solid #a8172a;
-            }
-            .about:hover {
-                font-size: 15px;
-            }
-        }
+                @font-face {
+                    font-family: footer-font;
+                    src: url('../fonts/LuckiestGuy-Regular.ttf');
+                }
+                
+                * {
+                    box-sizing: border-box;
+                }
+                
+                img {
+                    width: 100%;
+                }
+                
+                body {
+                    margin: 0;
+                }
+                /* main layout */
+                
+                .main-container {
+                    height: 100vh;
+                    grid-template-columns: repeat(8, 1fr);
+                    grid-template-rows: 1fr 3fr 3fr 1fr;
+                }
+                
+                .header-container {
+                    grid-column: 1/ span 8;
+                    grid-row: 1/ span 1;
+                    background-color: #FB9623;
+                    margin-bottom: 30px;
+                    box-shadow: -10px 6px 0 #fe6e20, -19px 11px 0 #a8172a;
+                    padding: 20px;
+                }
+                
+                .editor-container {
+                    grid-column: 1/ span 8;
+                    grid-row: 2/ span 1;
+                    background-color: lightgrey;
+                    display: none;
+                    border: solid 7px #fe6e20;
+                    border-radius: 30px;
+                    margin: 0 auto;
+                }
+                
+                .gallery-container {
+                    grid-column: 1/ span 8;
+                    grid-row: 3/ span 1;
+                    background-color: lightgrey;
+                    display: none;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+                    grid-gap: 10px;
+                }
+                
+                .footer {
+                    grid-column: 1/ span 8;
+                    grid-row: 4/ span 1;
+                    background-color: #FB9623;
+                    margin-top: 30px;
+                    text-align: center;
+                }
+                
+                .footer p {
+                    font-size: 40px;
+                    -webkit-text-stroke-width: 2px;
+                    -webkit-text-stroke-color: black;
+                    color: #fe6e20;
+                    font-family: footer-font, sans-serif;
+                }
+                
+                .footer small {
+                    position: relative;
+                    bottom: 30px;
+                    font-size: 16px;
+                }
+                /* header layout */
+                
+                .logo {
+                    max-width: 300px;
+                }
+                
+                .hambur {
+                    display: none;
+                }
+                
+                .close-menu {
+                    display: none;
+                }
+                
+                .menu {
+                    font-size: 30px;
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                    color: #FB9623;
+                    text-transform: capitalize;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: black;
+                    text-shadow: -10px 6px 0 #fe6e20, -19px 11px 0 #a8172a;
+                }
+                
+                .gallery {
+                    cursor: pointer;
+                    transition: .2s;
+                }
+                
+                .gallery-container img {
+                    border-radius: 20px;
+                    cursor: pointer;
+                }
+                
+                .gallery:hover {
+                    font-size: 50px;
+                }
+                
+                .about {
+                    cursor: pointer;
+                    transition: .2s;
+                }
+                
+                .about:hover {
+                    font-size: 50px;
+                }
+                
+                li {
+                    padding-right: 50px;
+                }
+                /* editer layout */
+                
+                .editor-controller {
+                    flex-direction: column;
+                    margin: auto;
+                }
+                
+                .canvas {
+                    border-radius: 23px;
+                }
+                
+                #input {
+                    max-width: 300px;
+                    margin: 30px auto 0 auto;
+                    padding: 5px;
+                }
+                
+                .top-btns {
+                    margin: 0 auto;
+                    padding-top: 15px;
+                }
+                
+                .btn {
+                    width: 50px;
+                    height: 50px;
+                    cursor: pointer;
+                    background-color: white;
+                    border-radius: 10px;
+                    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.49);
+                    margin: 3px;
+                    padding: 5px;
+                }
+                
+                .low-btns {
+                    text-align: center;
+                }
+                
+                .save {
+                    text-align: center;
+                }
+                
+                .save a {
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.49);
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                }
+                
+                .save a:hover {
+                    color: #FB9623;
+                }
+                
+                .text-stroke {
+                    opacity: 0;
+                }
+                
+                .text-fill {
+                    opacity: 0;
+                }
+                
+                .btn:hover {
+                    background-color: #FB9623;
+                    filter: sepia(30%);
+                }
+                
+                .btns-editor {
+                    flex-direction: column;
+                    padding: 30px 50px 30px 50px;
+                    gap: 50px;
+                }
+                /* gallery layout */
+                /* helpers */
+                
+                .grid {
+                    display: grid;
+                }
+                
+                .flex {
+                    display: flex;
+                }
+                
+                .space-between {
+                    justify-content: space-between;
+                }
+                
+                .flex.align-center {
+                    align-items: center;
+                }
+                
+                .flex.justify-content-center {
+                    justify-content: center;
+                }
+                
+                .clean-list {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                @media (max-width: 500px) {
+                    .logo {
+                        max-width: 100px;
+                        max-height: 50px;
+                        padding-left: 20px;
+                        object-fit: contain;
+                    }
+                    .menu {
+                        flex-direction: column;
+                        position: fixed;
+                        right: 0;
+                        top: 0;
+                        height: 100%;
+                        background-color: #FB9623;
+                        text-shadow: unset;
+                        opacity: 0.97;
+                        padding-right: unset;
+                        width: 50%;
+                        transform: translateX(100%);
+                        transition: 2s;
+                    }
+                    .menu li:hover {
+                        color: #a8172a;
+                    }
+                    .header-container {
+                        padding: 10px 0;
+                    }
+                    .gallery {
+                        font-size: 20px;
+                        width: 80%;
+                        text-align: center;
+                        padding: 30px 0;
+                        border-bottom: 4px solid #a8172a;
+                    }
+                    .gallery:hover {
+                        font-size: 20px;
+                    }
+                    .about {
+                        font-size: 20px;
+                        width: 80%;
+                        text-align: center;
+                        padding: 30px 0;
+                        border-bottom: 4px solid #a8172a;
+                    }
+                    .about:hover {
+                        font-size: 20px;
+                    }
+                    .gallery-container {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                    .hambur {
+                        display: block;
+                        align-self: center;
+                        padding-right: 30px;
+                        color: #a8172a;
+                        font-size: 30px;
+                        cursor: pointer;
+                    }
+                    .menu.open {
+                        transform: translateX(0);
+                    }
+                    .close-menu {
+                        display: block;
+                        align-self: flex-end;
+                        padding-right: 20px;
+                        cursor: pointer;
+                    }
+                    .canvas {
+                        width: 100%;
+                        height: 300px;
+                    }
+                    .editor-container {
+                        flex-direction: column;
+                    }
+                    .btn {
+                        width: 35px;
+                        height: 35px;
+                    }
+                    .btns-editor {
+                        padding: 10px 30px 10px 30px;
+                        gap: 10px;
+                    }
+                }
