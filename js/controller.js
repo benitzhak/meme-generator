@@ -5,6 +5,15 @@
 function init() {
     gCanvas = document.querySelector('.canvas');
     gCtx = gCanvas.getContext('2d');
+    handelHammer();
+}
+
+function handelHammer() {
+    var container = document.querySelector('.header-container')
+    var hammertime = new Hammer(container);
+    hammertime.on('pan', function(ev) {
+        console.log(ev);
+    });
 }
 
 

@@ -40,8 +40,10 @@
                         <img class="btn align-right-btn " src="img/ICONS/align-to-right.png " onclick="onAlignRight()">
                     </section>
                     <section class="low-btns">
-                        <img class="btn stroke-color-btn " src="img/ICONS/text stroke.png " onclick="openStroke()">
+                        <button class="text-stroke-btn" onclick="openStroke()">
+                        <img class="btn stroke-color-btn " src="img/ICONS/text stroke.png " >
                         <input class="text-stroke" type="color" oninput="strokeColor(this)">
+                    </button>
                         <input class="text-fill" type="color" oninput="fillColor(this)">
                         <img class="btn fill-color-btn " src="img/ICONS/paint-board-and-brush.png " onclick="openFill()">
                     </section>
@@ -76,6 +78,7 @@
             <small>® all rights reserved meme generator 2021</small>
         </footer>
     </div>
+    <script src="lib/hammer.min.js"></script>
     <script src="js/service/meme-service.js "></script>
     <script src="js/controller.js "></script>
 </body>
