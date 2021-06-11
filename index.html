@@ -18,12 +18,13 @@
                 <li class="close-menu" onclick="toggleMenu()">x</li>
                 <li class="gallery" onclick="openGallery()">gallery</li>
                 <li class="about">about</li>
+                <li class="memes" onclick="openMemes()">memes</li>
             </ul>
         </header>
-        <main class="editor-container border">
+        <main class="editor-container">
             <canvas class="canvas" height="450" width="450"></canvas>
             <div class="editor-controller flex ">
-                <input id="input" type="text" placeholder="write something" oninput="setText(event)" onfocus="drawRect()">
+                <input id="input" type="text" placeholder="write something..." oninput="setText(event)" onfocus="drawRect()">
                 <div class="btns-editor flex ">
                     <section class="top-btns">
                         <img class="btn add-btn " src="img/ICONS/add.png " onclick="removeRect()">
@@ -40,6 +41,10 @@
                         <img class="btn align-right-btn " src="img/ICONS/align-to-right.png " onclick="onAlignRight()">
                     </section>
                     <section class="low-btns">
+                        <select class="fonts" onclick="chooseFont(this.value)">
+                            <option value="impact">Impact</option>
+                            <option value="ariel">Ariel</option>
+                        </select>
                         <button class="btn text-stroke-btn" onclick="openStroke()">
                         <img  src="img/ICONS/text stroke.png " >
                         <input class="text-stroke" type="color" oninput="strokeColor(this)">
@@ -51,6 +56,7 @@
                     </section>
                     <section class="save ">
                         <a href="#" onclick="downloadCanvas(this)" download="my-img">Download</a>
+                        <a class="save-btn" href="#" onclick="saveCanvas(this)">save</a>
                     </section>
                 </div>
             </div>
@@ -75,11 +81,14 @@
             <img id="17" onclick="drawImg(this)" class="img" src="img/17.jpg " alt=" ">
             <img id="18" onclick="drawImg(this)" class="img" src="img/18.jpg " alt=" ">
         </main>
+        <main class="saved-imges">
+        </main>
         <footer class="footer ">
             <p>meme generator</p>
             <small>® all rights reserved meme generator 2021</small>
         </footer>
     </div>
+    <script src="js/service/storage-service.js"></script>
     <script src="js/service/meme-service.js "></script>
     <script src="js/controller.js "></script>
 </body>

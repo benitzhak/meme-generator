@@ -5,7 +5,7 @@ var gCurrImg;
 
 var gKeywords = { 'happy': 12, 'funny puk': 1 }
 
-var gImgs = [{ id: 1, url: 'img/popo.jpg', keywords: ['happy'] }];
+var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['happy'] }];
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
@@ -15,6 +15,7 @@ var gMeme = {
             align: 'center',
             color: 'black',
             fillColor: 'white',
+            font: 'impact',
             offsetY: 50,
             offsetX: 225
         },
@@ -24,6 +25,7 @@ var gMeme = {
             align: 'center',
             color: 'black',
             fillColor: 'white',
+            font: 'impact',
             offsetY: 200,
             offsetX: 225
         },
@@ -33,6 +35,7 @@ var gMeme = {
             align: 'center',
             color: 'black',
             fillColor: 'white',
+            font: 'impact',
             offsetY: 400,
             offsetX: 225
         }
@@ -60,4 +63,8 @@ function openEditor() {
         elEditor.classList.add('flex');
         elGallry.classList.remove('grid');
     }
+}
+
+function loadCanvas() {
+    return loadFromStorage(`meme${gMeme.selectedImgId}`);
 }
