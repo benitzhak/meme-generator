@@ -35,15 +35,10 @@ function drawText() {
 function drawRect() {
     var idx = gMeme.selectedLineIdx;
     var hight = gMeme.lines[idx].offsetY
+    var fontSize = gMeme.lines[idx].size;
     drawImg(gCurrImg);
     draw();
-    if (idx === 0) {
-        gCtx.strokeRect(20, hight - 40, 400, 50);
-    } else if (idx === 1) {
-        gCtx.strokeRect(20, hight - 40, 400, 50);
-    } else {
-        gCtx.strokeRect(20, hight - 40, 400, 50);
-    }
+    gCtx.strokeRect(20, hight - fontSize, 400, fontSize + 10);
 }
 
 function downloadCanvas(elLink) {
@@ -104,7 +99,7 @@ function textUp() {
     var idx = gMeme.selectedLineIdx;
     if (gMeme.lines[idx].offsetY === 35) return
     else
-        gMeme.lines[idx].offsetY--
+        gMeme.lines[idx].offsetY--;
         drawRect();
 }
 
